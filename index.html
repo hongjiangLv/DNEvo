@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tSNE</title>
+    <link href="css/main.css">
+    <script src="./lib/loadsh.js"></script>
+    <script src="./lib/d3.v7.js"></script>
+    <script src="./lib/jquery-3.6.0.js"></script>
+    <script src="./lib/echarts.js"></script>
+    <script src="./lib/jquery-ui.js"></script>
+    <link href="./css/master_style.css" rel="stylesheet" type="text/css">
+    <link href="./css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="main">
+    <div id="top" class="border">
+        <div id="left" class="border">
+            <div id="filter" class="border">
+<!--                <h4 style="line-height: 18px; margin: 4px">Filter</h4>-->
+                <div id="moveFilter">
+                    <p>
+                        <label for = "move_value" class="slide_text">Move Range:</label>
+                        <input type = "text" id = "move_value" class="slide_text" value="0-25">
+                    </p>
+                    <div id="moveSlide" style="margin: 0 30px"></div>
+                </div>
+                <div id="graphFilter">
+                    <p>
+                        <label for = "graph_value" class="slide_text">Graph Num Range:</label>
+                        <input type = "text" id = "graph_value" class="slide_text" value="0-11">
+                    </p>
+                    <div id="graphSlide" style="margin: 0 30px"></div>
+                </div>
+                <div id="timeFilter">
+                    <p>
+                        <label for = "time_value" class="slide_text">Time Frame Range:</label>
+                        <input type = "text" id = "time_value" class="slide_text" value="0-35">
+                    </p>
+                    <div id="timeSlide" style="margin: 0 30px">
+<!--                        <svg id="time_svg"></svg>-->
+                    </div>
+                </div>
+            </div>
+            <div id="parallel" class="border">
+                <svg id="parallel_svg"></svg>
+            </div>
+        </div>
+        <div id="middle" class="border">
+            <div id="scatter">
+                <svg id="scatter_svg"></svg>
+            </div>
+            <div id="buttonlist">
+                <div class="buttonBorder">
+                    <button id="info" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                    <button id="path" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                    <button id="bar" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                    <button id="force" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                    <button id="brush" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                    <button id="highlight" type="button" class="btn btn-default btn-xs interaction bc"></button>
+                </div>
+            </div>
+            <div id="tooltip"></div>
+        </div>
+        <div id="right">
+            <div id="stackBar" class="border">
+                <svg id="stackBar_svg"></svg>
+            </div>
+            <div id="static" class="border">
+                <div id="nodeAttr" class="sta border">
+                    <div id="nodeAttrs"></div>
+                    <select id="radarSelect">
+                        <option selected="selected">company</option>
+                        <option>risk</option>
+                    </select>
+                </div>
+                <div id="graphAttr" class="sta border">
+                    <select id="graphSelect">
+                        <option>auth</option>
+                        <option>between</option>
+                        <option>close</option>
+                        <option>core</option>
+                        <option>degree_in</option>
+                        <option selected="selected">degree_out</option>
+                        <option>eigen</option>
+                        <option>harmon</option>
+                        <option>hub</option>
+                        <option>pagerank</option>
+                        <option>original_stress</option>
+                        <option>additional_stress</option>
+                        <option>original_losses</option>
+                        <option>additional_losses</option>
+                        <option>impd</option>
+                        <option>imps</option>
+                    </select>
+                    <div id="graphAttrs"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" class="border">
+        <div id="bottom-left" class="border bottom-lr"></div>
+        <div id="bottom-right" class="border bottom-lr"></div>
+    </div>
+</div>
+
+</body>
+<script src="./js/config.js"></script>
+<script src="./js/scatter.js"></script>
+<script src="./js/parallel.js"></script>
+<script src="./js/stackBar.js"></script>
+<script src="./js/force.js"></script>
+<script src="./js/node_static.js"></script>
+<script src="./js/graph_static.js"></script>
+<script src="./js/tsne.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/button.js"></script>
+<script src="./js/filter.js"></script>
+</html>
